@@ -8,6 +8,7 @@ import {
   NewPendingOwnership,
   Transfer
 } from "../generated/Token/Token"
+
 import { ExampleEntity } from "../generated/schema"
 
 export function handleApproval(event: Approval): void {
@@ -25,7 +26,7 @@ export function handleApproval(event: Approval): void {
   }
 
   // BigInt and BigDecimal math are supported
-  entity.count = entity.count + BigInt.fromI32(1)
+  entity.count = entity.count // BigInt.fromI32(1)
 
   // Entity fields can be set based on event parameters
   entity.owner = event.params.owner
